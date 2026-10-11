@@ -1278,15 +1278,11 @@ bool Application::createSetupWizard()
     if (wizardRequired) {
         // set default theme after going into theme wizard
         if (!validIcons) {
-            settings()->set("IconTheme", QString("pe_colored"));
+            settings()->set("IconTheme", QString("flat_white"));
         }
         if (!validWidgets) {
-#if defined(Q_OS_WIN32) || defined(Q_OS_MACOS)
-            const QString style =
-                QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark ? QStringLiteral("dark") : QStringLiteral("bright");
-#else
-            const QString style = QStringLiteral("system");
-#endif
+            // Spectrum Launcher: monochrome dark look by default
+            const QString style = QStringLiteral("dark");
 
             settings()->set("ApplicationTheme", style);
         }

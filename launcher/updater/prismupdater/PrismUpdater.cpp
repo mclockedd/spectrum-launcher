@@ -83,7 +83,7 @@ PrismUpdaterApp::PrismUpdaterApp(int& argc, char** argv) : QApplication(argc, ar
 
     // Command line parsing
     QCommandLineParser parser;
-    parser.setApplicationDescription(QObject::tr("An auto-updater for Prism Launcher"));
+    parser.setApplicationDescription(QObject::tr("An auto-updater for Spectrum Launcher"));
 
     parser.addOptions(
         { { { "d", "dir" }, tr("Use a custom path as application root (use '.' for current directory)."), tr("directory") },
@@ -1032,9 +1032,9 @@ void PrismUpdaterApp::backupAppDir()
         } else {  // windows by process of elimination
             fileList.append({
                 "jars",
-                "prismlauncher.exe",
-                "prismlauncher_filelink.exe",
-                "prismlauncher_updater.exe",
+                "spectrumlauncher.exe",
+                "spectrumlauncher_filelink.exe",
+                "spectrumlauncher_updater.exe",
                 "qtlogging.ini",
                 "imageformats",
                 "iconengines",
